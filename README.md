@@ -1,12 +1,11 @@
 # Global Academy Pathway (GAP)
 
-![GAP Logo](https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop) <!-- Replace with actual logo/banner if available -->
 
 Global Academy Pathway (GAP) is a comprehensive platform dedicated to A-Z school upgradation, focusing on human values, life skills, and world-class IGCSE standards. This project serves as the official website for GAP, offering insights into their holistic educational model, services, pricing, and contact information.
 
 Designed and developed by **Team ProDevInfo**.
 
-## 🚀 Features
+##  Features
 
 *   **Modern, Premium UI/UX:** A clean, professional, and beautifully designed interface featuring a vibrant blue theme (`#6266ea`).
 *   **Fully Responsive:** Seamlessly adapts to all screen sizes (mobile, tablet, desktop).
@@ -15,7 +14,7 @@ Designed and developed by **Team ProDevInfo**.
 *   **Phosphor Icons:** Utilizes lightweight and elegant vector icons.
 *   **Smooth Animations:** Hover effects, transition animations, and a sleek subscribe section.
 
-## 📁 Project Structure
+##  Project Structure
 
 The project is built as a static website using pure HTML, CSS, and Vanilla JavaScript.
 
@@ -34,7 +33,7 @@ GAP/
 └── script.js        # JavaScript logic (Theme toggling, mobile menu, interactions)
 ```
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 *   **HTML5:** Semantic structuring.
 *   **CSS3:** Custom properties (variables), Flexbox, CSS Grid, and media queries for responsiveness.
@@ -42,7 +41,7 @@ GAP/
 *   **Phosphor Icons:** Web icon library.
 *   **Google Fonts:** Typography (Inter).
 
-## 💻 Running Locally
+##  Running Locally
 
 Since this is a static website, you don't need any complex build tools to run it.
 
@@ -62,7 +61,7 @@ Then, open your browser and navigate to the local address provided (usually `htt
 ### Option 2: Direct File Execution
 You can simply double-click the `index.html` file in your file explorer to open it directly in your web browser. *(Note: Some JavaScript features might have CORS restrictions if opened directly via the `file://` protocol, so Option 1 is preferred).*
 
-## 🎨 Theme Customization
+##  Theme Customization
 
 The site uses CSS custom properties defined in `style.css` and `gap_style.css`. To alter the color scheme, locate the `:root` variables.
 
@@ -76,7 +75,7 @@ The site uses CSS custom properties defined in `style.css` and `gap_style.css`. 
 }
 ```
 
-## 📄 License
+##  License
 
 &copy; 2026 Global Academy Pathway. All Rights Reserved.
 Designed by Team ProDevInfo.
