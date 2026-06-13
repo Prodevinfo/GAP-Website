@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAP School Upgrade - Pricing Page</title>
+    <meta name="Keywords" content="Cambridge Curriculum Experts,Transforming Schools into Global Learning Institutions">
+    <meta name="Description" content="Best IGCSE school mentoring">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--background) 0%, var(--secondary) 100%);
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .page-header h1 {
+            color: var(--primary);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-section {
+            padding: 4rem 0;
+            background-color: var(--background);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(145deg, var(--primary) 0%, #4a4ed4 100%);
+            color: var(--white);
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(98, 102, 234, 0.2);
+            border: none;
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 20px 45px rgba(98, 102, 234, 0.3);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 183, 3, 0.3);
+        }
+
+        .pricing-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            background: rgba(255, 183, 3, 0.1);
+            width: 70px;
+            height: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+        }
+
+        .pricing-card.featured .pricing-icon {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .pricing-card.featured .pricing-desc {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .pricing-card.featured .pricing-price {
+            color: var(--white);
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .pricing-card.featured .pricing-price span {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pricing-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            flex-grow: 1;
+        }
+
+        .pricing-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .pricing-card.featured .pricing-list li {
+            color: var(--white);
+        }
+
+        .pricing-list li i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+        }
+
+        .pricing-card.featured .pricing-list li i {
+            color: var(--accent);
+        }
+
+        .pricing-horizontal {
+            background: var(--white);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-horizontal:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .ph-icon-box {
+            background: var(--primary-light);
+            color: var(--white);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            height: 100%;
+        }
+
+        .ph-icon-box i {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ph-icon-box h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .ph-body {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .ph-body .pricing-list li {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ph-action {
+            padding: 2rem;
+            text-align: center;
+            min-width: 220px;
+            border-left: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ph-action p {
+            font-weight: 800;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .btn-pricing {
+            padding: 0.8rem 1.5rem;
+            font-size: 1.05rem;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 992px) {
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-horizontal {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .ph-icon-box {
+                width: 100%;
+                padding: 1.5rem;
+            }
+
+            .ph-action {
+                border-left: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="main_header" class="header">
+        <div class="container header-container">
+            <a class="brand" href="index.html">
+                <i class="ph ph-buildings brand-icon"></i>
+                <span class="brand-text">Global Academy Pathway</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="ph ph-list"></i>
+            </button>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="work.html" class="nav-link">Work</a></li>
+                    <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <button class="theme-toggle" aria-label="Toggle Theme" id="theme-toggle">
+                        <svg class="moon-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                        </svg>
+                        <svg class="sun-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm-12.37 2.48l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.02.39 1.41 0zm13.43-13.43l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Pricing</h1>
+            <p>GAP has 3-tier pricing plan which can be customised based on your requirements.</p>
+        </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <section class="content-section">
+        <div class="container pricing-grid">
+            <!-- Plan 1 -->
+            <div class="pricing-card">
+                <i class="ph-duotone ph-rocket-launch pricing-icon"></i>
+                <h2 class="pricing-title">IGCSE Launch Support</h2>
+                <p class="pricing-desc">Perfect for schools exploring IGCSE transition and board navigation.</p>
+                <div class="pricing-price">₹75,000<span>/project</span></div>
+                <ul class="pricing-list">
+                    <li><i class="ph-fill ph-check-circle"></i> Board Navigation Blueprint</li>
+                    <li><i class="ph-fill ph-check-circle"></i> IGCSE consultation</li>
+                    <li><i class="ph-fill ph-check-circle"></i> Academic structure review</li>
+                    <li><i class="ph-fill ph-check-circle"></i> Email / virtual Support</li>
+                    <li><i class="ph-fill ph-check-circle"></i> Basic implementation guidance</li>
+                </ul>
+                <a href="#" class="btn btn-secondary btn-pricing" style="width: 100%; text-align: center;">Get Now</a>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="pricing-card featured">
+                <div class="popular-badge">Most Popular</div>
+                <i class="ph-duotone ph-crown pricing-icon"></i>
+                <h2 class="pricing-title">School Transformation</h2>
+                <p class="pricing-desc">Comprehensive upgrade with leadership and assessment consulting.</p>
+                <div class="pricing-price">₹2,50,000<span>/project</span></div>
+                <ul class="pricing-list">
+                    <li><i class="ph-fill ph-check-circle" style="color: var(--accent);"></i> IGCSE Launch Support</li>
+                    <li><i class="ph-fill ph-check-circle" style="color: var(--accent);"></i> Assessment & compliance
+                        guidance</li>
+                    <li><i class="ph-fill ph-check-circle" style="color: var(--accent);"></i> Curriculum upgrade support
+                    </li>
+                    <li><i class="ph-fill ph-check-circle" style="color: var(--accent);"></i> Leadership consulting</li>
+                    <li><i class="ph-fill ph-check-circle" style="color: var(--accent);"></i> Ongoing academic support
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-primary btn-pricing"
+                    style="width: 100%; text-align: center; background: var(--white); color: var(--primary);">Get
+                    Now</a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="pricing-card">
+                <i class="ph-duotone ph-globe-hemisphere-west pricing-icon"></i>
+                <h2 class="pricing-title">Global Partnership</h2>
+                <p class="pricing-desc">End-to-end transformation for an international school standard.</p>
+                <div class="pricing-price">Custom<span>/project</span></div>
+                <ul class="pricing-list">
+                    <li><i class="ph-fill ph-check-circle"></i> IGCSE implementation</li>
+                    <li><i class="ph-fill ph-check-circle"></i> Dedicated GAP team</li>
+                    <li><i class="ph-fill ph-check-circle"></i> Full Access Sources</li>
+                    <li><i class="ph-fill ph-check-circle"></i> Continued support</li>
+                    <li><i class="ph-fill ph-check-circle"></i> Branding & Promotion</li>
+                </ul>
+                <a href="#" class="btn btn-secondary btn-pricing" style="width: 100%; text-align: center;">Get Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Pricing -->
+    <section class="content-section" style="background-color: var(--white);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2
+                    style="color: var(--primary); font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.5rem;">
+                    Pricing Overview</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Compare our
+                    plans at a glance to see which fits your school's unique transition needs.</p>
+            </div>
+
+            <div class="pricing-horizontal">
+                <div class="ph-icon-box">
+                    <i class="ph-duotone ph-rocket-launch"></i>
+                    <h5>Starting Plan</h5>
+                </div>
+                <div class="ph-body">
+                    <ul class="pricing-list" style="margin-bottom: 0;">
+                        <li><i class="ph-fill ph-check-circle"></i> New schools or schools</li>
+                        <li><i class="ph-fill ph-check-circle"></i> exploring IGCSE transition</li>
+                    </ul>
+                </div>
+                <div class="ph-action">
+                    <p>From ₹75,000</p>
+                    <a href="#" class="btn btn-primary btn-pricing">Get Now</a>
+                </div>
+            </div>
+
+            <div class="pricing-horizontal">
+                <div class="ph-icon-box" style="background: var(--primary);">
+                    <i class="ph-duotone ph-crown"></i>
+                    <h5>Customized Plan</h5>
+                </div>
+                <div class="ph-body">
+                    <ul class="pricing-list" style="margin-bottom: 0;">
+                        <li><i class="ph-fill ph-check-circle"></i> Schools planning</li>
+                        <li><i class="ph-fill ph-check-circle"></i> Complete international upgradation</li>
+                    </ul>
+                </div>
+                <div class="ph-action">
+                    <p>₹2,50,000</p>
+                    <a href="#" class="btn btn-primary btn-pricing">Get Now</a>
+                </div>
+            </div>
+
+            <div class="pricing-horizontal">
+                <div class="ph-icon-box">
+                    <i class="ph-duotone ph-globe-hemisphere-west"></i>
+                    <h5>Excellence Plan</h5>
+                </div>
+                <div class="ph-body">
+                    <ul class="pricing-list" style="margin-bottom: 0;">
+                        <li><i class="ph-fill ph-check-circle"></i> Schools looking for</li>
+                        <li><i class="ph-fill ph-check-circle"></i> complete international school transformation</li>
+                    </ul>
+                </div>
+                <div class="ph-action">
+                    <p>Custom Pricing</p>
+                    <a href="#" class="btn btn-primary btn-pricing">Get Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Col 1 -->
+            <div class="footer-col brand-col">
+                <a class="footer-brand" href="index.html">
+                    <i class="ph ph-buildings"></i>
+                    <span>Global Academy Pathway</span>
+                </a>
+                <p class="footer-desc">Complete A-Z school upgrade for<br>school growth & students success.</p>
+                <div class="social-links">
+                    <a href="http://facebook.com/" target="_blank"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="https://www.linkedin.com/in/sajitha-j-24a366402/" target="_blank"><i
+                            class="ph-fill ph-linkedin-logo"></i></a>
+                    <a href="https://www.whatsapp.com/" target="_blank"><i class="ph-fill ph-whatsapp-logo"></i></a>
+                    <a href="https://www.youtube.com/@GlobalAcademyPathwayGAP/" target="_blank"><i
+                            class="ph-fill ph-youtube-logo"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2 -->
+            <div class="footer-col">
+                <h3 class="footer-title">Our Company</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="ph ph-caret-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="ph ph-caret-right"></i> About Us</a></li>
+                    <li><a href="work.html"><i class="ph ph-caret-right"></i> Work</a></li>
+                    <li><a href="pricing.html"><i class="ph ph-caret-right"></i> Price</a></li>
+                    <li><a href="contact.html"><i class="ph ph-caret-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3 -->
+            <div class="footer-col">
+                <h3 class="footer-title">Our Works</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="ph ph-caret-right"></i> International Support</a></li>
+                    <li><a href="index.html"><i class="ph ph-caret-right"></i> IGCSE Academic Coaching</a></li>
+                    <li><a href="index.html"><i class="ph ph-caret-right"></i> Global Teacher Training</a></li>
+                    <li><a href="index.html"><i class="ph ph-caret-right"></i> Curriculum Upgrade</a></li>
+                    <li><a href="index.html"><i class="ph ph-caret-right"></i> Global Education Consultancy</a></li>
+                    <li><a href="index.html"><i class="ph ph-caret-right"></i> Academic & Skill Development</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4 -->
+            <div class="footer-col">
+                <h3 class="footer-title">For Client</h3>
+                <ul class="footer-links contact-links">
+                    <li><a href="tel:+447405813669"><i class="ph ph-phone"></i> +44 7405 813669</a></li>
+                    <li><a href="tel:9136692642"><i class="ph ph-phone"></i> 91366 92642</a></li>
+                    <li><a href="mailto:globalacademypathwaygap@gmail.com"><i class="ph ph-envelope-simple"></i>
+                            globalacademypathwaygap@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Global Academy Pathway. All Rights Reserved.</p>
+                <div>
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </div>
+                <p>Designed by Team ProDevInfo</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
